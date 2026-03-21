@@ -1,34 +1,34 @@
-# ✈️ Flight Delay Prediction and Analysis
+# ✈️ Predição e Análise de Atrasos de Voos
 
 Tech Challenge – FIAP  
 Machine Learning Engineering
 
 ---
 
-# 📌 Project Overview
+# 📌 Visão Geral do Projeto
 
-Flight delays are a common challenge in the aviation industry, impacting passengers, airlines, and airport operations. Understanding the factors that contribute to delays can help improve operational efficiency and passenger experience.
+Atrasos de voos são um desafio comum na aviação, impactando passageiros, companhias aéreas e a operação dos aeroportos. Compreender os fatores que contribuem para esses atrasos é essencial para melhorar a eficiência operacional e a experiência do cliente.
 
-This project analyzes historical flight data to identify patterns related to flight delays and develops Machine Learning models capable of predicting whether a flight will experience a significant delay.
+Este projeto analisa dados históricos de voos para identificar padrões relacionados a atrasos e desenvolve modelos de Machine Learning capazes de prever se um voo terá atraso significativo.
 
-The project also applies unsupervised learning techniques to identify operational patterns across airports and routes, and presents insights through an interactive Power BI dashboard.
-
----
-
-# 🎯 Project Objectives
-
-The main objectives of this project are:
-
-- Perform **Exploratory Data Analysis (EDA)** to understand delay patterns
-- Identify operational factors related to flight delays
-- Develop **Machine Learning models** to predict flight delays
-- Apply **unsupervised learning techniques** to identify airport patterns
-- Build an **interactive Power BI dashboard**
-- Structure the project following **professional Data Science and ML Engineering practices**
+Além disso, o projeto aplica técnicas de aprendizado não supervisionado para identificar padrões operacionais entre aeroportos e rotas, e apresenta os resultados em um dashboard interativo no Power BI.
 
 ---
 
-# 🧰 Technologies Used
+# 🎯 Objetivos do Projeto
+
+Os principais objetivos são:
+
+- Realizar **Análise Exploratória de Dados (EDA)** para entender padrões de atraso  
+- Identificar fatores operacionais associados a atrasos e cancelamentos  
+- Desenvolver **modelos de Machine Learning** para prever atrasos  
+- Aplicar **técnicas de aprendizado não supervisionado** para identificar padrões entre aeroportos  
+- Criar um **dashboard interativo no Power BI**  
+- Estruturar o projeto seguindo boas práticas de **Data Science e ML Engineering**
+
+---
+
+# 🧰 Tecnologias Utilizadas
 
 Python  
 Pandas  
@@ -43,33 +43,33 @@ GitHub
 
 ---
 
-# 📁 Project Structure
+# 📁 Estrutura do Projeto
 
 
 FLIGHTS-ML
 
-dashboard
-flight_delay_dashboard.pbix
+dashboard/
+    flight_delay_dashboard.pbix
 
-data
-raw
-processed
+data/
+    raw
+    processed
 
-models
-logistic_model.pkl
-random_forest.pkl
+models/
+    logistic_model.pkl
+    random_forest.pkl
 
-notebooks
-flight_delay_analysis.ipynb
+notebooks/
+    flight_delay_analysis.ipynb
 
-outputs
-figures
-tables
+outputs/
+    figures
+    tables
 
-src
-data_processing.py
-feature_engineering.py
-model_training.py
+src/
+    data_processing.py
+    feature_engineering.py
+    model_training.py
 
 .gitignore
 LICENSE
@@ -79,91 +79,89 @@ requirements.txt
 
 ---
 
-# 📂 Folder Description
+# 📂 Descrição das Pastas
 
 **data/raw**  
-Stores the original dataset used in the project.
+Armazena o dataset original.
 
 **data/processed**  
-Stores cleaned and transformed datasets ready for modeling and dashboard usage.
+Armazena os dados tratados e prontos para modelagem.
 
 **notebooks**  
-Contains the main analysis notebook developed in Google Colab.
+Contém o notebook principal com toda a análise (desenvolvido no Google Colab).
 
 **src**  
-Contains reusable Python scripts for data processing, feature engineering, and model training.
+Scripts reutilizáveis de processamento, engenharia de features e modelagem.
 
 **models**  
-Stores trained machine learning models.
+Modelos treinados de Machine Learning.
 
 **outputs/figures**  
-Stores charts and visualizations generated during analysis.
+Gráficos gerados durante a análise.
 
 **outputs/tables**  
-Stores aggregated tables used for the dashboard.
+Tabelas agregadas utilizadas no dashboard.
 
 **dashboard**  
-Contains the Power BI dashboard file.
+Arquivo do Power BI com visualizações interativas.
 
 ---
 
 # 📊 Dataset
 
-The dataset contains historical flight information including operational metrics such as scheduling, airlines, airports, and delays.
+O dataset contém informações históricas de voos, incluindo dados operacionais como horários, aeroportos, companhias aéreas, atrasos e cancelamentos.
 
-Key variables include:
+Principais variáveis:
 
-| Variable | Description |
+| Variável | Descrição |
 |--------|-------------|
-| YEAR | Year of flight |
-| MONTH | Month of flight |
-| DAY | Day of flight |
-| DAY_OF_WEEK | Day of week |
-| AIRLINE | Airline code |
-| ORIGIN_AIRPORT | Departure airport |
-| DESTINATION_AIRPORT | Arrival airport |
-| SCHEDULED_DEPARTURE | Scheduled departure time |
-| DEPARTURE_DELAY | Departure delay in minutes |
-| ARRIVAL_DELAY | Arrival delay in minutes |
-| DISTANCE | Flight distance |
-| CANCELLED | Indicates if the flight was cancelled |
-| DIVERTED | Indicates if the flight was diverted |
-
-These variables allow us to analyze operational performance and train predictive models.
+| YEAR | Ano do voo |
+| MONTH | Mês |
+| DAY | Dia |
+| DAY_OF_WEEK | Dia da semana |
+| AIRLINE | Companhia aérea |
+| ORIGIN_AIRPORT | Aeroporto de origem |
+| DESTINATION_AIRPORT | Aeroporto de destino |
+| SCHEDULED_DEPARTURE | Horário previsto de saída |
+| DEPARTURE_DELAY | Atraso na saída (minutos) |
+| ARRIVAL_DELAY | Atraso na chegada (minutos) |
+| DISTANCE | Distância do voo |
+| CANCELLED | Indica cancelamento |
+| DIVERTED | Indica desvio de rota |
 
 ---
 
-# 🔎 Project Methodology
+# 🔎 Metodologia
 
-The project follows a standard Machine Learning workflow:
+O projeto segue um pipeline padrão de Machine Learning:
 
-1️⃣ Data Loading  
-2️⃣ Data Understanding  
-3️⃣ Data Cleaning and Preprocessing  
-4️⃣ Exploratory Data Analysis (EDA)  
-5️⃣ Feature Engineering  
-6️⃣ Supervised Machine Learning Models  
-7️⃣ Unsupervised Learning Analysis  
-8️⃣ Model Evaluation  
-9️⃣ Dashboard Development  
+1️⃣ Carregamento dos dados  
+2️⃣ Entendimento da base  
+3️⃣ Limpeza e tratamento  
+4️⃣ Análise exploratória (EDA)  
+5️⃣ Engenharia de features  
+6️⃣ Modelagem supervisionada  
+7️⃣ Modelagem não supervisionada  
+8️⃣ Avaliação dos modelos  
+9️⃣ Construção do dashboard  
 
 ---
 
-# 📈 Exploratory Data Analysis
+# 📈 Análise Exploratória (EDA)
 
-EDA was performed to understand operational behavior and identify patterns associated with flight delays.
+A EDA foi realizada para identificar padrões e comportamentos dos atrasos.
 
-Key analyses include:
+Principais análises:
 
-- Distribution of arrival delays
-- Delay patterns by airline
-- Delay patterns by airport
-- Delay patterns by day of week
-- Delay patterns by time of day
-- Cancellation rates by airline
-- Identification of problematic flight routes
+- Distribuição de atrasos na chegada  
+- Atraso médio por companhia aérea  
+- Atraso por aeroporto  
+- Atraso por dia da semana  
+- Atraso por horário  
+- Taxa de cancelamento  
+- Rotas com maior atraso  
 
-Generated visualizations are stored in:
+Os gráficos estão disponíveis em:
 
 
 outputs/figures
@@ -171,87 +169,75 @@ outputs/figures
 
 ---
 
-# 🧠 Feature Engineering
+# 🧠 Engenharia de Features
 
-Several features were created to improve predictive performance:
+Foram criadas variáveis adicionais para melhorar a performance dos modelos:
 
-- Time-of-day categories (morning, afternoon, evening, night)
-- Weekend indicator
-- Route identifier (origin + destination)
-- Distance categories
-- Scheduled flight duration categories
+- Período do dia (manhã, tarde, noite, madrugada)  
+- Indicador de fim de semana  
+- Identificação de rota (origem + destino)  
+- Faixas de distância  
+- Duração prevista do voo  
 
-Special care was taken to **avoid data leakage**, ensuring that variables generated after flight completion were not used in the prediction model.
+Foi tomado cuidado para evitar **data leakage**, ou seja, não foram utilizadas variáveis que só existem após a execução do voo.
 
 ---
 
-# 🤖 Supervised Learning Models
+# 🤖 Modelagem Supervisionada
 
-The supervised learning task consists of predicting whether a flight will experience a **significant delay**.
+O objetivo do modelo é prever se um voo terá atraso significativo.
 
-Target variable:
-
-
+Variável alvo:
 is_delayed
 
+Definição:
+ARRIVAL_DELAY > 15 minutos
 
-Definition:
+Modelos utilizados:
+- Regressão Logística (baseline)  
+- Random Forest  
 
-
-Arrival Delay > 15 minutes
-
-
-Models implemented:
-
-- Logistic Regression (baseline)
-- Random Forest Classifier
-
-Evaluation metrics:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC AUC
-
-Model comparison helps determine which algorithm performs best for delay prediction.
+Métricas de avaliação:
+- Acurácia  
+- Precisão  
+- Recall  
+- F1-Score  
+- ROC AUC  
 
 ---
 
-# 🔬 Unsupervised Learning
+# 🔬 Modelagem Não Supervisionada
 
-Unsupervised learning was applied to identify patterns among airports.
+Foi utilizada clusterização para identificar padrões entre aeroportos.
 
-Airports were grouped using clustering techniques based on:
+Variáveis utilizadas:
 
-- Average delay
-- Delay rate
-- Cancellation rate
-- Flight volume
-- Average distance
+- Atraso médio  
+- Taxa de atraso  
+- Taxa de cancelamento  
+- Volume de voos  
+- Distância média  
 
-Algorithms used:
+Algoritmos:
 
-- K-Means Clustering
-- Principal Component Analysis (PCA) for visualization
-
-This analysis allows the identification of airports with similar operational behaviors.
+- K-Means  
+- PCA (para visualização dos clusters)
 
 ---
 
-# 📊 Power BI Dashboard
+# 📊 Dashboard no Power BI
 
-An interactive dashboard was developed using **Power BI** to present the main insights from the analysis.
+Foi desenvolvido um dashboard interativo para análise dos dados.
 
-Dashboard features include:
+Principais visões:
 
-- Flight delay overview
-- Delay rate by airline
-- Delay rate by airport
-- Route performance analysis
-- Temporal delay patterns (day of week and hour)
+- Visão geral de atrasos  
+- Atraso por companhia aérea  
+- Atraso por aeroporto  
+- Análise de rotas  
+- Comportamento temporal  
 
-Dashboard file:
+Arquivo:
 
 
 dashboard/flight_delay_dashboard.pbix
@@ -259,67 +245,51 @@ dashboard/flight_delay_dashboard.pbix
 
 ---
 
-# 📊 Results
+# 📊 Resultados
 
-The analysis identified several operational factors associated with flight delays, including:
+O projeto identificou fatores importantes associados aos atrasos, como:
 
-- Airlines with higher delay rates
-- Airports with operational congestion
-- Time-of-day effects on delays
-- High-risk flight routes
+- Companhias com maior taxa de atraso  
+- Aeroportos com maior congestionamento  
+- Impacto do horário nos atrasos  
+- Rotas mais problemáticas  
 
-Machine Learning models demonstrated the ability to predict delay likelihood using operational scheduling features.
-
----
-
-# ⚠️ Limitations
-
-Some limitations of this study include:
-
-- Lack of detailed weather information
-- Absence of real-time operational constraints
-- Potential bias from historical data distribution
-
-Future improvements could include integrating weather data and air traffic control information.
+Os modelos de Machine Learning mostraram capacidade de prever atrasos com base em variáveis operacionais.
 
 ---
 
-# 🚀 Future Improvements
+# ⚠️ Limitações
 
-Possible improvements for this project include:
-
-- Incorporating weather data
-- Building a dedicated model for flight cancellations
-- Deploying the model as an API
-- Developing a real-time delay prediction system
-- Expanding the dashboard with predictive insights
+- Ausência de dados climáticos detalhados  
+- Falta de variáveis operacionais em tempo real  
+- Possível viés nos dados históricos  
 
 ---
 
-# ▶️ How to Run the Project
+# 🚀 Próximos Passos
 
-Clone the repository:
+- Incluir dados climáticos  
+- Criar modelo para prever cancelamentos  
+- Implementar API para previsão em tempo real  
+- Evoluir o dashboard com previsões  
 
+---
 
-git clone https://github.com/your-repository/flights-ml.git
+# ▶️ Como Executar o Projeto
 
+Clonar o repositório:
+git clone https://github.com/seu-repositorio/flights-ml.git
 
-Install dependencies:
-
-
+Instalar dependências:
 pip install -r requirements.txt
 
-
-Open the notebook:
-
-
+Abrir o notebook:
 notebooks/flight_delay_analysis.ipynb
 
-
-Run the notebook to reproduce the entire analysis pipeline.
+Executar todas as células para reproduzir a análise.
 
 ---
 
-# 📌 Author
+# 📌 Autor
 
-Project developed as part of the **FIAP Machine Learning Engineering Tech Challenge**.
+Projeto desenvolvido por Giovanna Catelli para o Tech Challenge da FIAP – Machine Learning Engineering.
