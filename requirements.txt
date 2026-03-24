@@ -1,0 +1,27 @@
+# Core
+pandas
+numpy
+
+# Visualização
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+xgboost
+
+# Download de dados
+gdown
+
+# Utilidades
+joblib
+
+# Notebook / ambiente
+jupyter
+ipykernel
+
+# (Opcional - recomendado para performance com dataset grande)
+pyarrow
+
+# (Opcional - leitura eficiente)
+fastparquet
