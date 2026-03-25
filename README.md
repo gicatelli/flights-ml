@@ -1,295 +1,242 @@
 # ✈️ Predição e Análise de Atrasos de Voos
 
-Tech Challenge – FIAP  
+Tech Challenge – FIAP
 Machine Learning Engineering
 
 ---
 
 # 📌 Visão Geral do Projeto
 
-Atrasos de voos são um desafio comum na aviação, impactando passageiros, companhias aéreas e a operação dos aeroportos. Compreender os fatores que contribuem para esses atrasos é essencial para melhorar a eficiência operacional e a experiência do cliente.
+Atrasos de voos são um desafio comum na aviação, impactando passageiros, companhias aéreas e a operação dos aeroportos.
 
-Este projeto analisa dados históricos de voos para identificar padrões relacionados a atrasos e desenvolve modelos de Machine Learning capazes de prever se um voo terá atraso significativo.
+Este projeto analisa dados históricos de voos para identificar padrões relacionados a atrasos e desenvolve modelos de Machine Learning capazes de:
 
-Além disso, o projeto aplica técnicas de aprendizado não supervisionado para identificar padrões operacionais entre aeroportos e rotas, e apresenta os resultados em um dashboard interativo no Power BI.
+* prever se um voo irá atrasar (classificação)
+* prever quanto tempo o atraso irá durar (regressão)
+
+Além disso, o projeto aplica técnicas de aprendizado não supervisionado para identificar padrões operacionais entre aeroportos e apresenta os resultados em um dashboard interativo no Power BI.
 
 ---
 
 # 🎯 Objetivos do Projeto
 
-Os principais objetivos são:
-
-- Realizar **Análise Exploratória de Dados (EDA)** para entender padrões de atraso  
-- Identificar fatores operacionais associados a atrasos e cancelamentos  
-- Desenvolver **modelos de Machine Learning** para prever atrasos  
-- Aplicar **técnicas de aprendizado não supervisionado** para identificar padrões entre aeroportos  
-- Criar um **dashboard interativo no Power BI**  
-- Estruturar o projeto seguindo boas práticas de **Data Science e ML Engineering**
+* Realizar Análise Exploratória de Dados (EDA)
+* Identificar fatores associados a atrasos
+* Desenvolver modelos de classificação e regressão
+* Aplicar clusterização para segmentar aeroportos
+* Criar dashboard interativo
+* Demonstrar pipeline completo de Data Science
 
 ---
 
 # 🧰 Tecnologias Utilizadas
 
-Python  
-Pandas  
-NumPy  
-Matplotlib  
-Seaborn  
-Scikit-learn  
-XGBoost  
-Google Colab  
-Power BI  
-GitHub  
+Python
+Pandas
+NumPy
+Matplotlib
+Seaborn
+Scikit-learn
+Power BI
+GitHub
 
 ---
 
 # 📁 Estrutura do Projeto
 
-
 FLIGHTS-ML
 
 dashboard/
-    flight_delay_dashboard.pbix
+  flight_delay_dashboard.pbix
 
 data/
-    raw
-    processed
+  raw/
+  processed/
 
 models/
-    logistic_model.pkl
-    random_forest.pkl
+  logistic_model.pkl
+  random_forest.pkl
 
 notebooks/
-    flight_delay_analysis.ipynb
+  flight_delay_analysis.ipynb
 
 outputs/
-    figures
-    tables
+  figures/
+  tables/
 
 src/
-    data_processing.py
-    feature_engineering.py
-    model_training.py
-
-.gitignore
-LICENSE
-README.md
-requirements.txt
-
+  data_processing.py
+  feature_engineering.py
+  model_training.py
 
 ---
 
-# 📂 Descrição das Pastas
+# 📂 Dataset
 
-**data/raw**  
-Armazena o dataset original.
+Os dados são baixados automaticamente via script utilizando Google Drive.
 
-**data/processed**  
-Armazena os dados tratados e prontos para modelagem.
-
-**notebooks**  
-Contém o notebook principal com toda a análise (desenvolvido no Google Colab).
-
-**src**  
-Scripts reutilizáveis de processamento, engenharia de features e modelagem.
-
-**models**  
-Modelos treinados de Machine Learning.
-
-**outputs/figures**  
-Gráficos gerados durante a análise.
-
-**outputs/tables**  
-Tabelas agregadas utilizadas no dashboard.
-
-**dashboard**  
-Arquivo do Power BI com visualizações interativas.
-
----
-
-# 📊 Dataset
-
-O dataset contém informações históricas de voos, incluindo dados operacionais como horários, aeroportos, companhias aéreas, atrasos e cancelamentos.
-
-Principais variáveis:
-
-| Variável | Descrição |
-|--------|-------------|
-| YEAR | Ano do voo |
-| MONTH | Mês |
-| DAY | Dia |
-| DAY_OF_WEEK | Dia da semana |
-| AIRLINE | Companhia aérea |
-| ORIGIN_AIRPORT | Aeroporto de origem |
-| DESTINATION_AIRPORT | Aeroporto de destino |
-| SCHEDULED_DEPARTURE | Horário previsto de saída |
-| DEPARTURE_DELAY | Atraso na saída (minutos) |
-| ARRIVAL_DELAY | Atraso na chegada (minutos) |
-| DISTANCE | Distância do voo |
-| CANCELLED | Indica cancelamento |
-| DIVERTED | Indica desvio de rota |
+### ▶️ Download automático
 
 ---
 
 # 🔎 Metodologia
 
-O projeto segue um pipeline padrão de Machine Learning:
+O projeto segue as etapas:
 
-1️⃣ Carregamento dos dados  
-2️⃣ Entendimento da base  
-3️⃣ Limpeza e tratamento  
-4️⃣ Análise exploratória (EDA)  
-5️⃣ Engenharia de features  
-6️⃣ Modelagem supervisionada  
-7️⃣ Modelagem não supervisionada  
-8️⃣ Avaliação dos modelos  
-9️⃣ Construção do dashboard  
+1. Leitura e integração dos dados
+2. Tratamento de valores ausentes
+3. Análise exploratória (EDA)
+4. Engenharia de features
+5. Modelagem supervisionada
+6. Modelagem não supervisionada
+7. Avaliação
 
 ---
 
 # 📈 Análise Exploratória (EDA)
 
-A EDA foi realizada para identificar padrões e comportamentos dos atrasos.
+Principais insights:
 
-Principais análises:
-
-- Distribuição de atrasos na chegada  
-- Atraso médio por companhia aérea  
-- Atraso por aeroporto  
-- Atraso por dia da semana  
-- Atraso por horário  
-- Taxa de cancelamento  
-- Rotas com maior atraso  
-
-Os gráficos estão disponíveis em:
-
-
-outputs/figures
-
+* Distribuição de atrasos é assimétrica (cauda longa)
+* Diferenças relevantes entre companhias aéreas
+* Atrasos aumentam ao longo do dia (pior à noite)
+* Clima impacta casos extremos
+* Rotas e aeroportos concentram atrasos
 
 ---
 
 # 🧠 Engenharia de Features
 
-Foram criadas variáveis adicionais para melhorar a performance dos modelos:
+Principais features criadas:
 
-- Período do dia (manhã, tarde, noite, madrugada)  
-- Indicador de fim de semana  
-- Identificação de rota (origem + destino)  
-- Faixas de distância  
-- Duração prevista do voo  
+* `IS_DELAYED` (atraso > 15 min)
+* Período do dia
+* Hora do voo
+* Cidade de origem/destino (redução de cardinalidade)
+* Rota (origem + destino)
 
-Foi tomado cuidado para evitar **data leakage**, ou seja, não foram utilizadas variáveis que só existem após a execução do voo.
+Foi evitado data leakage (uso apenas de variáveis disponíveis antes do voo).
 
 ---
 
 # 🤖 Modelagem Supervisionada
 
-O objetivo do modelo é prever se um voo terá atraso significativo.
+## Classificação
 
-Variável alvo:
-is_delayed
+Objetivo: prever se o voo irá atrasar
 
-Definição:
-ARRIVAL_DELAY > 15 minutos
+Modelos:
 
-Modelos utilizados:
-- Regressão Logística (baseline)  
-- Random Forest  
+* Logistic Regression
+* Random Forest
 
-Métricas de avaliação:
-- Acurácia  
-- Precisão  
-- Recall  
-- F1-Score  
-- ROC AUC  
+Resultado:
+
+* Logistic Regression teve melhor desempenho
+* Random Forest apresentou colapso na classe minoritária
+
+---
+
+## Regressão
+
+Objetivo: prever duração do atraso
+
+Modelos:
+
+* Linear Regression
+* Random Forest Regressor
+
+Resultado:
+
+* Linear Regression apresentou melhor desempenho
+* Alto R² (~0.96)
 
 ---
 
 # 🔬 Modelagem Não Supervisionada
 
-Foi utilizada clusterização para identificar padrões entre aeroportos.
+Aplicação de clusterização de aeroportos com:
+
+* KMeans
+* PCA (visualização)
 
 Variáveis utilizadas:
 
-- Atraso médio  
-- Taxa de atraso  
-- Taxa de cancelamento  
-- Volume de voos  
-- Distância média  
+* ARRIVAL_DELAY
+* DEPARTURE_DELAY
+* DELAY_RATE
+* DISTANCE
+* AIR_TIME
+* WEATHER_DELAY
+* N_FLIGHTS
 
-Algoritmos:
+Resultado:
 
-- K-Means  
-- PCA (para visualização dos clusters)
-
----
-
-# 📊 Dashboard no Power BI
-
-Foi desenvolvido um dashboard interativo para análise dos dados.
-
-Principais visões:
-
-- Visão geral de atrasos  
-- Atraso por companhia aérea  
-- Atraso por aeroporto  
-- Análise de rotas  
-- Comportamento temporal  
-
-Arquivo:
-
-
-dashboard/flight_delay_dashboard.pbix
-
+* Identificação de aeroportos mais eficientes vs mais críticos
+* Segmentação operacional clara
 
 ---
 
 # 📊 Resultados
 
-O projeto identificou fatores importantes associados aos atrasos, como:
-
-- Companhias com maior taxa de atraso  
-- Aeroportos com maior congestionamento  
-- Impacto do horário nos atrasos  
-- Rotas mais problemáticas  
-
-Os modelos de Machine Learning mostraram capacidade de prever atrasos com base em variáveis operacionais.
+* Atrasos dependem de múltiplos fatores operacionais
+* Modelos conseguem prever atraso e duração
+* Clusterização identifica padrões estruturais entre aeroportos
 
 ---
 
 # ⚠️ Limitações
 
-- Ausência de dados climáticos detalhados  
-- Falta de variáveis operacionais em tempo real  
-- Possível viés nos dados históricos  
+* Falta de dados climáticos detalhados
+* Não considera variáveis em tempo real
+* Desbalanceamento da variável alvo
 
 ---
 
 # 🚀 Próximos Passos
 
-- Incluir dados climáticos  
-- Criar modelo para prever cancelamentos  
-- Implementar API para previsão em tempo real  
-- Evoluir o dashboard com previsões  
+* Incluir dados climáticos reais
+* Melhorar classificação (balanceamento)
+* Deploy de modelo
+* API de previsão
+* Dashboard em tempo real
 
 ---
 
-# ▶️ Como Executar o Projeto
+# ▶️ Como Executar
 
-Clonar o repositório:
+```bash
 git clone https://github.com/seu-repositorio/flights-ml.git
-
-Instalar dependências:
+cd flights-ml
 pip install -r requirements.txt
+```
+Executar script python:
 
-Abrir o notebook:
-notebooks/flight_delay_analysis.ipynb
+```bash
+python src/download_data.py
+```
 
-Executar todas as células para reproduzir a análise.
+Executar notebook:
+
+```bash
+jupyter notebook notebooks/flight_delay_analysis.ipynb
+```
 
 ---
 
-# 📌 Autor
+# 📌 Conclusão
 
-Projeto desenvolvido por Giovanna Catelli para o Tech Challenge da FIAP – Machine Learning Engineering.
+Este projeto demonstra uma pipeline completa de Data Science:
+
+* EDA → entendimento do problema
+* Modelagem supervisionada → previsão
+* Modelagem não supervisionada → descoberta de padrões
+
+Gerando insights interpretáveis e aplicáveis ao problema de atrasos em voos.
+
+---
+
+# 👤 Autor
+
+Projeto desenvolvido por Giovanna Catelli
+Tech Challenge – FIAP
