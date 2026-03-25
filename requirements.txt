@@ -1,10 +1,12 @@
 # Core
 pandas
 numpy
+scipy
 
 # Visualização
 matplotlib
 seaborn
+plotly
 
 # Machine Learning
 scikit-learn
@@ -15,13 +17,12 @@ gdown
 
 # Utilidades
 joblib
+tqdm
 
 # Notebook / ambiente
 jupyter
 ipykernel
 
-# (Opcional - recomendado para performance com dataset grande)
+# Performance
 pyarrow
-
-# (Opcional - leitura eficiente)
 fastparquet
