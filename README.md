@@ -206,7 +206,7 @@ Resultado:
 # ▶️ Como Executar
 
 ```bash
-git clone https://github.com/seu-repositorio/flights-ml.git
+git clone https://github.com/gicatelli/flights-ml.git
 cd flights-ml
 pip install -r requirements.txt
 ```
